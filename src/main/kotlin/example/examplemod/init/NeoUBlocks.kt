@@ -4,6 +4,7 @@ import example.examplemod.NeoUranus
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState
 import net.minecraft.world.level.block.WeatheringCopperFullBlock
@@ -12,6 +13,7 @@ import net.minecraft.world.level.material.MapColor
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
+import thedarkcolour.kotlinforforge.forge.ObjectHolderDelegate
 import thedarkcolour.kotlinforforge.forge.registerObject
 
 
@@ -37,6 +39,14 @@ object NeoUBlocks {
     }
     val WAXED_OXIDIZED_COPPER_TILES = regBlockWItem("waxed_oxidized_copper_tiles") { copyBlock(OXIDIZED_COPPER_TILES) }
 
+    val CUT_BRASS = regBlockWItem("cut_brass") {
+        Block(
+            BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                .requiresCorrectToolForDrops()
+                .mapColor(MapColor.TERRACOTTA_YELLOW)
+        )
+    }
+
 
     fun init() = BLOCKS.register(MOD_BUS)
 
@@ -50,12 +60,12 @@ object NeoUBlocks {
                 .sound(SoundType.COPPER)
         )
 
-    fun copyBlock(block: Block) = Block(BlockBehaviour.Properties.copy(block))
+    fun copyBlock(block: ObjectHolderDelegate<Block>) = Block(BlockBehaviour.Properties.copy(block.get()))
 
 
-    fun regBlockWItem(id: String, creativeTab: Boolean = true, supplier: () -> Block): Block {
-        val block by BLOCKS.registerObject(id, supplier)
-        NeoUItems.regItem(id, creativeTab) { BlockItem(block, Item.Properties()) }
+    fun regBlockWItem(id: String, creativeTab: Boolean = true, supplier: () -> Block): ObjectHolderDelegate<Block> {
+        val block = BLOCKS.registerObject(id, supplier)
+        NeoUItems.regItem(id, creativeTab) { BlockItem(block.get(), Item.Properties()) }
 
         return block
     }

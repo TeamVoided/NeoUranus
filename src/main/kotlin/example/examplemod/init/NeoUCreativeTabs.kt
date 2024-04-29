@@ -17,10 +17,9 @@ object NeoUCreativeTabs {
     val TAB_NEO_URANUS = CREATIVE_TABS.register("neouranus") {
         CreativeModeTab.builder()
             .title(Component.translatable("NeoUranus"))
-            .icon { ItemStack(NeoUBlocks.COPPER_TILES) }
-            .displayItems { _, output ->
-                NeoUItems.creativeTabItems.forEach(output::accept)
-            }.build()
+            .icon { ItemStack(NeoUBlocks.COPPER_TILES.get()) }
+            .displayItems { _, output -> NeoUItems.creativeTabItems.forEach { output.accept(it.get()) } }
+            .build()
     }
 
     fun init() = CREATIVE_TABS.register(MOD_BUS)

@@ -3,6 +3,7 @@ package example.examplemod
 import example.examplemod.init.NeoUBlocks
 import example.examplemod.init.NeoUCreativeTabs
 import example.examplemod.init.NeoUItems
+import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.fml.common.Mod
 import org.apache.logging.log4j.Level
 import org.apache.logging.log4j.LogManager
@@ -14,6 +15,7 @@ object NeoUranus {
 
     // the logger for our mod
     val LOGGER: Logger = LogManager.getLogger(ID)
+    fun id(path: String) = ResourceLocation(ID, path)
 
     init {
         LOGGER.log(Level.INFO, "Hello world!")
@@ -21,20 +23,20 @@ object NeoUranus {
         NeoUBlocks.init()
         NeoUItems.init()
         NeoUCreativeTabs.init()
-/*
-        val obj = runForDist(
-            clientTarget = {
-                MOD_BUS.addListener(::onClientSetup)
-                Minecraft.getInstance()
-            },
-            serverTarget = {
-                MOD_BUS.addListener(::onServerSetup)
-                "test"
-            })
+        /*
+                val obj = runForDist(
+                    clientTarget = {
+                        MOD_BUS.addListener(::onClientSetup)
+                        Minecraft.getInstance()
+                    },
+                    serverTarget = {
+                        MOD_BUS.addListener(::onServerSetup)
+                        "test"
+                    })
 
-        println(obj)
+                println(obj)
 
- */
+         */
     }
 
 

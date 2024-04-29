@@ -21,14 +21,28 @@ class BlockTags(event: GatherDataEvent) :
 
     fun registerBlockMineables() {
         tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-            NeoUBlocks.COPPER_TILES,
-            NeoUBlocks.WAXED_COPPER_TILES,
-            NeoUBlocks.EXPOSED_COPPER_TILES,
-            NeoUBlocks.WAXED_EXPOSED_COPPER_TILES,
-            NeoUBlocks.WEATHERED_COPPER_TILES,
-            NeoUBlocks.WAXED_WEATHERED_COPPER_TILES,
-            NeoUBlocks.OXIDIZED_COPPER_TILES,
-            NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES
+            NeoUBlocks.COPPER_TILES.get(),
+            NeoUBlocks.WAXED_COPPER_TILES.get(),
+            NeoUBlocks.EXPOSED_COPPER_TILES.get(),
+            NeoUBlocks.WAXED_EXPOSED_COPPER_TILES.get(),
+            NeoUBlocks.WEATHERED_COPPER_TILES.get(),
+            NeoUBlocks.WAXED_WEATHERED_COPPER_TILES.get(),
+            NeoUBlocks.OXIDIZED_COPPER_TILES.get(),
+            NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES.get(),
+            NeoUBlocks.CUT_BRASS.get()
+        )
+        tag(BlockTags.NEEDS_STONE_TOOL).add(
+            NeoUBlocks.COPPER_TILES.get(),
+            NeoUBlocks.WAXED_COPPER_TILES.get(),
+            NeoUBlocks.EXPOSED_COPPER_TILES.get(),
+            NeoUBlocks.WAXED_EXPOSED_COPPER_TILES.get(),
+            NeoUBlocks.WEATHERED_COPPER_TILES.get(),
+            NeoUBlocks.WAXED_WEATHERED_COPPER_TILES.get(),
+            NeoUBlocks.OXIDIZED_COPPER_TILES.get(),
+            NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES.get(),
+        )
+        tag(BlockTags.NEEDS_IRON_TOOL).add(
+            NeoUBlocks.CUT_BRASS.get()
         )
     }
 
