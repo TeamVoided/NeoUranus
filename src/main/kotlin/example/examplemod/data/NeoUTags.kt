@@ -10,6 +10,10 @@ object NeoUTags {
 
     val METAL_SCRAP_ITEMS = createItemTag("metal_scrap")
 
+    val CREATE_MAGNETIC_BLOCKS = createBlockTag("create_ferromagnetic_blocks")
+    val CREATE_MAGNETIC_ITEMS = createItemTag("create_ferromagnetic_items")
+
+
     private fun createItemTag(name: String) = TagKey.create(Registries.ITEM, id(name))
     private fun createBlockTag(name: String) = TagKey.create(Registries.BLOCK, id(name))
 

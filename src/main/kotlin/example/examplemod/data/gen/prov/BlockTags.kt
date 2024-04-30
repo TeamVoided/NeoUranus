@@ -2,6 +2,8 @@ package example.examplemod.data.gen.prov
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry
+import com.simibubi.create.AllBlocks
+import com.simibubi.create.content.decoration.palettes.AllPaletteBlocks
 import example.examplemod.NeoUranus
 import example.examplemod.data.NeoUTags
 import example.examplemod.init.NeoUBlocks
@@ -86,11 +88,29 @@ class BlockTags(event: GatherDataEvent) :
                 NeoUBlocks.OXIDIZED_COPPER_TILES.get(),
                 NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES.get(),
             )
+        tag(NeoUTags.CREATE_MAGNETIC_BLOCKS)
+            .add(
+                AllBlocks.BLAZE_BURNER.get(),
+//                AllBlocks.LIT_BLAZE_BURNER.get(),
+                AllBlocks.CHUTE.get(),
+                AllBlocks.METAL_BRACKET.get(),
+                AllBlocks.ITEM_VAULT.get(),
+
+                AllBlocks.NETHERITE_BACKTANK.get(),
+
+                AllBlocks.METAL_GIRDER.get(),
+                AllBlocks.INDUSTRIAL_IRON_BLOCK.get(),
+                AllPaletteBlocks.ORNATE_IRON_WINDOW.get(),
+                AllPaletteBlocks.ORNATE_IRON_WINDOW_PANE.get(),
+            )
     }
 
     fun registerCompatibilityTags() {
         tag(ACTagRegistry.MAGNETIC_BLOCKS)
-            .addTags(NeoUTags.METAL_SCRAP_BLOCKS)
+            .addTags(
+                NeoUTags.METAL_SCRAP_BLOCKS,
+                NeoUTags.CREATE_MAGNETIC_BLOCKS,
+            )
             .add(
                 ACBlockRegistry.RUSTY_BARREL.get(),
                 ACBlockRegistry.RUSTY_SCAFFOLDING.get(),
@@ -99,6 +119,5 @@ class BlockTags(event: GatherDataEvent) :
                 ModBlocks.SKILLET.get(),
                 ModBlocks.COOKING_POT.get()
             )
-//        tag(CompatibilityTags.CREATE_PASSIVE_BOILER_HEATERS).add(ModBlocks.STOVE.get())
     }
 }

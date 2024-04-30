@@ -2,6 +2,7 @@ package example.examplemod.data.gen.prov
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry
+import com.simibubi.create.AllItems
 import example.examplemod.NeoUranus
 import example.examplemod.data.NeoUTags
 import net.minecraft.core.HolderLookup
@@ -14,15 +15,26 @@ class ItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvider(
     event.generator.packOutput, event.lookupProvider, blockTags.contentsGetter(), NeoUranus.ID, event.existingFileHelper
 ) {
     override fun addTags(provider: HolderLookup.Provider) {
-//        this.copy(BlockTags.SMALL_FLOWERS, ItemTags.SMALL_FLOWERS)
         copy(NeoUTags.METAL_SCRAP_BLOCKS, NeoUTags.METAL_SCRAP_ITEMS)
+        copy(NeoUTags.CREATE_MAGNETIC_BLOCKS, NeoUTags.CREATE_MAGNETIC_ITEMS)
         this.registerModTags()
         this.registerForgeTags()
         this.registerCompatibilityTags()
     }
 
     private fun registerModTags() {
-//        tag(ModTags.STRAW_HARVESTERS).addTag(ModTags.KNIVES)
+        tag(NeoUTags.CREATE_MAGNETIC_ITEMS)
+            .add(
+                AllItems.NETHERITE_DIVING_BOOTS.get(),
+                AllItems.NETHERITE_DIVING_HELMET.get(),
+
+                AllItems.PROPELLER.get(),
+                AllItems.WHISK.get(),
+                AllItems.MINECART_COUPLING.get(),
+                AllItems.MINECART_CONTRAPTION.get(),
+                AllItems.CHEST_MINECART_CONTRAPTION.get(),
+                AllItems.FURNACE_MINECART_CONTRAPTION.get()
+            )
     }
 
     private fun registerForgeTags() {
@@ -32,11 +44,14 @@ class ItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvider(
     fun registerCompatibilityTags() {
         tag(ACTagRegistry.MAGNETIC_ITEMS)
             .addTags(
-                NeoUTags.METAL_SCRAP_ITEMS
+                NeoUTags.METAL_SCRAP_ITEMS,
+                NeoUTags.CREATE_MAGNETIC_ITEMS
             )
             .add(
                 ACBlockRegistry.RUSTY_BARREL.get().asItem(),
                 ACBlockRegistry.RUSTY_SCAFFOLDING.get().asItem(),
+                ACBlockRegistry.METAL_REBAR.get().asItem(),
+                ACBlockRegistry.RUSTY_REBAR.get().asItem(),
             )
             .add(
                 ModBlocks.SKILLET.get().asItem(),
