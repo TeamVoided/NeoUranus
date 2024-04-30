@@ -3,6 +3,7 @@ package example.examplemod
 import example.examplemod.init.NeoUBlocks
 import example.examplemod.init.NeoUCreativeTabs
 import example.examplemod.init.NeoUItems
+import example.examplemod.init.NeoUMisc
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.fml.common.Mod
 import org.apache.logging.log4j.Level
@@ -23,6 +24,8 @@ object NeoUranus {
         NeoUBlocks.init()
         NeoUItems.init()
         NeoUCreativeTabs.init()
+        NeoUMisc
+
         /*
                 val obj = runForDist(
                     clientTarget = {

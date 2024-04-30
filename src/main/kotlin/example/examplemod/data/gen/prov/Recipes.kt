@@ -1,5 +1,6 @@
 package example.examplemod.data.gen.prov
 
+import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
 import com.simibubi.create.AllBlocks
 import example.examplemod.NeoUranus.id
 import example.examplemod.init.NeoUBlocks
@@ -14,7 +15,8 @@ import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.registries.ForgeRegistries
 import java.util.function.Consumer
-@Suppress("MagicNumber")
+
+@Suppress("MagicNumber", "TooManyFunctions")
 class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutput) {
 
     private fun key(item: Item): ResourceLocation? = ForgeRegistries.ITEMS.getKey(item)
@@ -54,6 +56,22 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
         c.stonecuttingResult4(Blocks.WAXED_EXPOSED_COPPER, NeoUBlocks.WAXED_EXPOSED_COPPER_TILES.get())
         c.stonecuttingResult4(Blocks.WAXED_WEATHERED_COPPER, NeoUBlocks.WAXED_WEATHERED_COPPER_TILES.get())
         c.stonecuttingResult4(Blocks.WAXED_OXIDIZED_COPPER, NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES.get())
+
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_ONE.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_TWO.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_THREE.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_FOUR.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_FIVE.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_SIX.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_SEVEN.get())
+
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN.get())
 
     }
 

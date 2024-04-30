@@ -20,9 +20,10 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 //println("Java: ${System.getProperty('java.version')}, JVM: ${System.getProperty('java.vm.version')} (${System.getProperty('java.vendor')}), Arch: ${System.getProperty('os.arch')}")
 minecraft {
     mappings channel: 'parchment', version: "${parchment_version}-${minecraft_version}"
-     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     runs {
+        //noinspection GroovyAssignabilityCheck
         copyIdeResources = true // REQUIRED for processResources to work in dev
 
         client {
@@ -55,7 +56,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources')
+            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources'), '--existing-mod', 'alexscaves'
             mods { "$mod_id" { source sourceSets.main } }
         }
     }
@@ -131,7 +132,7 @@ def replaceProperties = [
 ]
 processResources {
     inputs.properties replaceProperties
-    replaceProperties.put 'project', project
+    replaceProperties.put 'project', project.toString()
 
     filesMatching(resourceTargets) {
         expand replaceProperties

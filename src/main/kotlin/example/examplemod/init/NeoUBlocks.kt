@@ -1,5 +1,6 @@
 package example.examplemod.init
 
+import com.github.alexmodguy.alexscaves.server.block.ACSoundTypes
 import example.examplemod.NeoUranus
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
@@ -47,11 +48,27 @@ object NeoUBlocks {
         )
     }
 
+    val CUT_SCRAP_METAL_ONE = regBlockWItem("cut_scrap_metal_one") { scarpBlock() }
+    val CUT_SCRAP_METAL_TWO = regBlockWItem("cut_scrap_metal_two") { scarpBlock() }
+    val CUT_SCRAP_METAL_THREE = regBlockWItem("cut_scrap_metal_three") { scarpBlock() }
+    val CUT_SCRAP_METAL_FOUR = regBlockWItem("cut_scrap_metal_four") { scarpBlock() }
+    val CUT_SCRAP_METAL_FIVE = regBlockWItem("cut_scrap_metal_five") { scarpBlock() }
+    val CUT_SCRAP_METAL_SIX = regBlockWItem("cut_scrap_metal_six") { scarpBlock() }
+    val CUT_SCRAP_METAL_SEVEN = regBlockWItem("cut_scrap_metal_seven") { scarpBlock() }
+
+    val CUT_RUSTY_SCRAP_METAL_ONE = regBlockWItem("cut_rusty_scrap_metal_one") { scarpBlock() }
+    val CUT_RUSTY_SCRAP_METAL_TWO = regBlockWItem("cut_rusty_scrap_metal_two") { scarpBlock() }
+    val CUT_RUSTY_SCRAP_METAL_THREE = regBlockWItem("cut_rusty_scrap_metal_three") { scarpBlock() }
+    val CUT_RUSTY_SCRAP_METAL_FOUR = regBlockWItem("cut_rusty_scrap_metal_four") { scarpBlock() }
+    val CUT_RUSTY_SCRAP_METAL_FIVE = regBlockWItem("cut_rusty_scrap_metal_five") { scarpBlock() }
+    val CUT_RUSTY_SCRAP_METAL_SIX = regBlockWItem("cut_rusty_scrap_metal_six") { scarpBlock() }
+    val CUT_RUSTY_SCRAP_METAL_SEVEN = regBlockWItem("cut_rusty_scrap_metal_seven") { scarpBlock() }
+
 
     fun init() = BLOCKS.register(MOD_BUS)
 
     @Suppress("MagicNumber")
-    fun copperBlock(state: WeatherState, mapColor: MapColor) =
+    private fun copperBlock(state: WeatherState, mapColor: MapColor) =
         WeatheringCopperFullBlock(
             state, BlockBehaviour.Properties.of()
                 .mapColor(mapColor)
@@ -60,10 +77,21 @@ object NeoUBlocks {
                 .sound(SoundType.COPPER)
         )
 
-    fun copyBlock(block: ObjectHolderDelegate<Block>) = Block(BlockBehaviour.Properties.copy(block.get()))
+    @Suppress("MagicNumber")
+    private fun scarpBlock() = Block(
+        BlockBehaviour.Properties.of()
+            .mapColor(MapColor.METAL)
+            .requiresCorrectToolForDrops()
+            .strength(5.0f, 15.0f)
+            .sound(ACSoundTypes.SCRAP_METAL)
+    )
 
 
-    fun regBlockWItem(id: String, creativeTab: Boolean = true, supplier: () -> Block): ObjectHolderDelegate<Block> {
+    private fun copyBlock(block: ObjectHolderDelegate<Block>) = Block(BlockBehaviour.Properties.copy(block.get()))
+
+
+    private fun regBlockWItem(id: String, creativeTab: Boolean = true, supplier: () -> Block):
+            ObjectHolderDelegate<Block> {
         val block = BLOCKS.registerObject(id, supplier)
         NeoUItems.regItem(id, creativeTab) { BlockItem(block.get(), Item.Properties()) }
 
