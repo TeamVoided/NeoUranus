@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.teamvoided.neouranus.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "neouranus.refmap.json",
+  "mixins": [
+    "AcidBlockAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
