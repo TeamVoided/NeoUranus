@@ -21,6 +21,7 @@ public class AcidBlockAccessor {
     @Inject(method = "initCorrosion()V", at = @At("TAIL"), remap = false)
     private static void neoUranus$registerCorrosion(CallbackInfo ci) {
         if (CORRODES_INTERACTIONS != null) {
+            CorrosionReg.getCorrosionRegBlocks().forEach((i, o) -> CORRODES_INTERACTIONS.putIfAbsent(i.get(), o.get()));
             CorrosionReg.getCorrosionBlocks().forEach((i, o) -> CORRODES_INTERACTIONS.putIfAbsent(i.get(), o.get()));
         }
     }
