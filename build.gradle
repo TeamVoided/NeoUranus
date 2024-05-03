@@ -31,6 +31,9 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', mod_id
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods { "$mod_id" { source sourceSets.main } }
         }
 
@@ -39,6 +42,9 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             property 'forge.enabledGameTestNamespaces', mod_id
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods { "$mod_id" { source sourceSets.main } }
         }
 
@@ -56,6 +62,9 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources'), '--existing-mod', 'alexscaves'
             mods { "$mod_id" { source sourceSets.main } }
         }
@@ -93,6 +102,11 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
+
+    maven {
+        name "KosmX's maven"
+        url 'https://maven.kosmx.dev/'
+    }
 }
 
 dependencies {
@@ -112,6 +126,8 @@ dependencies {
     implementation fg.deobf("maven.modrinth:citadel:2.5.4")
     implementation fg.deobf("maven.modrinth:alexs-caves:1.1.4")
 
+    implementation fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${player_anim}")
+//    include("dev.kosmx.player-anim:player-animation-lib-forge:${player_anim}")
 
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:15.2.0.27"))
     compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:15.2.0.27"))
