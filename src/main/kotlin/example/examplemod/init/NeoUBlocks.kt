@@ -64,8 +64,9 @@ object NeoUBlocks {
     val CUT_RUSTY_SCRAP_METAL_SIX = regBlockWItem("cut_rusty_scrap_metal_six") { scarpBlock() }
     val CUT_RUSTY_SCRAP_METAL_SEVEN = regBlockWItem("cut_rusty_scrap_metal_seven") { scarpBlock() }
 
-
-    fun init() = BLOCKS.register(MOD_BUS)
+    init {
+        BLOCKS.register(MOD_BUS)
+    }
 
     @Suppress("MagicNumber")
     private fun copperBlock(state: WeatherState, mapColor: MapColor) =

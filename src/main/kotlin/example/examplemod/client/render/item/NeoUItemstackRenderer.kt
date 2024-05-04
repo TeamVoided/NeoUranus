@@ -1,4 +1,4 @@
-package example.examplemod.client.render
+package example.examplemod.client.render.item
 
 import com.mojang.blaze3d.vertex.PoseStack
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer

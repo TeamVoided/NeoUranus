@@ -1,10 +1,7 @@
 package example.examplemod
 
 import example.examplemod.client.NeoUClient
-import example.examplemod.init.NeoUBlocks
-import example.examplemod.init.NeoUCreativeTabs
-import example.examplemod.init.NeoUItems
-import example.examplemod.init.NeoUMisc
+import example.examplemod.init.*
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.fml.common.Mod
 import org.apache.logging.log4j.LogManager
@@ -21,9 +18,10 @@ object NeoUranus {
     init {
         log.info("Loading NeoUranus")
 
-        NeoUBlocks.init()
-        NeoUItems.init()
-        NeoUCreativeTabs.init()
+        NeoUBlocks
+        NeoUItems
+        NeoUEntities
+        NeoUCreativeTabs
         NeoUMisc
 
 

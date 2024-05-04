@@ -1,4 +1,4 @@
-package example.examplemod.client.render
+package example.examplemod.client.render.item
 
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer
 import net.minecraftforge.client.extensions.common.IClientItemExtensions

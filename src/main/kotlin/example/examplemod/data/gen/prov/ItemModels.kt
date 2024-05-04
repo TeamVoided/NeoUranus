@@ -14,7 +14,7 @@ class ItemModels(event: GatherDataEvent, helper: ExistingFileHelper) :
 
     override fun registerModels() {
         hammerItem(NeoUItems.BASIC_HAMMER.get())
-        heldItem(NeoUItems.GALENA_RIFLE.get())
+//        heldItem(NeoUItems.GALENA_RIFLE.get())
     }
 
     fun heldItem(item: Item): ItemModelBuilder = basicItem(item).parent(UncheckedModelFile("item/handheld"))

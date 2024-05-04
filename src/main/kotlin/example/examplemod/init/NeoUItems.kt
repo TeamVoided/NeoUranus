@@ -20,8 +20,9 @@ object NeoUItems {
     val BASIC_HAMMER = regItem("basic_hammer") { HammerItem() }
     val GALENA_RIFLE = regItem("galena_rifle") { GalenaRifle() }
 
-
-    fun init() = ITEMS.register(MOD_BUS)
+    init {
+        ITEMS.register(MOD_BUS)
+    }
 
     fun regItem(id: String, creativeTab: Boolean = true, supplier: () -> Item): ObjectHolderDelegate<Item> {
         val item = ITEMS.registerObject(id, supplier)

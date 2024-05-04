@@ -22,5 +22,7 @@ object NeoUCreativeTabs {
             .build()
     }
 
-    fun init() = CREATIVE_TABS.register(MOD_BUS)
+    init {
+        CREATIVE_TABS.register(MOD_BUS)
+    }
 }
