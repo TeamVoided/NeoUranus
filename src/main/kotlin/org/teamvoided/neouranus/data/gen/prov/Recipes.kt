@@ -1,8 +1,7 @@
 package org.teamvoided.neouranus.data.gen.prov
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
-import org.teamvoided.neouranus.NeoUranus.id
-import org.teamvoided.neouranus.init.NeoUBlocks
+import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.data.recipes.*
 import net.minecraft.resources.ResourceLocation
@@ -13,6 +12,9 @@ import net.minecraft.world.level.ItemLike
 import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.registries.ForgeRegistries
+import org.teamvoided.neouranus.NeoUranus.id
+import org.teamvoided.neouranus.init.NeoUBlocks
+import org.teamvoided.neouranus.init.NeoUItems
 import java.util.function.Consumer
 
 @Suppress("MagicNumber", "TooManyFunctions")
@@ -25,15 +27,16 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
         crafting(c)
         stonecutting(c)
         shapeless(c)
+        smithing(c)
     }
 
     fun crafting(c: Consumer<FinishedRecipe>) {
-       /* ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NeoUBlocks.CUT_BRASS.get(), 4)
-            .pattern("##")
-            .pattern("##")
-            .define('#', AllBlocks.BRASS_BLOCK.get())
-            .unlockedBy(AllBlocks.BRASS_BLOCK.get())
-            .save(c, NeoUBlocks.CUT_BRASS.get())*/
+        /* ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NeoUBlocks.CUT_BRASS.get(), 4)
+             .pattern("##")
+             .pattern("##")
+             .define('#', AllBlocks.BRASS_BLOCK.get())
+             .unlockedBy(AllBlocks.BRASS_BLOCK.get())
+             .save(c, NeoUBlocks.CUT_BRASS.get())*/
 
     }
 
@@ -73,6 +76,21 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
 
     }
 
+    fun smithing(c: Consumer<FinishedRecipe>) {
+        netheriteSmithing(
+            c, ACItemRegistry.HAZMAT_MASK.get(), RecipeCategory.COMBAT, NeoUItems.REINFORCED_HAZMAT_MASK.get()
+        )
+        netheriteSmithing(
+            c, ACItemRegistry.HAZMAT_CHESTPLATE.get(),
+            RecipeCategory.COMBAT, NeoUItems.REINFORCED_HAZMAT_CHESTPLATE.get()
+        )
+        netheriteSmithing(
+            c, ACItemRegistry.HAZMAT_LEGGINGS.get(), RecipeCategory.COMBAT, NeoUItems.REINFORCED_HAZMAT_LEGGINGS.get()
+        )
+        netheriteSmithing(
+            c, ACItemRegistry.HAZMAT_BOOTS.get(), RecipeCategory.COMBAT, NeoUItems.REINFORCED_HAZMAT_BOOTS.get()
+        )
+    }
 
     fun Consumer<FinishedRecipe>.waxRecipe(result: ItemLike, ingredient: ItemLike) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.DECORATIONS, result)
@@ -86,7 +104,7 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
         this.stonecutting(source, result, 4)
 
     fun Consumer<FinishedRecipe>.stonecutting(
-        source: ItemLike, result: ItemLike, resultAmount: Int, category: RecipeCategory = RecipeCategory.DECORATIONS
+        source: ItemLike, result: ItemLike, resultAmount: Int, category: RecipeCategory = RecipeCategory.DECORATIONS,
     ) {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(source), category, result.asItem(), resultAmount)
             .unlockedBy(source)

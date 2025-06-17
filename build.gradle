@@ -122,7 +122,8 @@ dependencies {
     implementation fg.deobf("maven.modrinth:farmers-delight:1.20.1-1.2.4")
 
     implementation fg.deobf("maven.modrinth:citadel:${citadel_version}")
-    implementation fg.deobf("maven.modrinth:alexs-caves:${alexs_caves_version}")
+    compileOnly("maven.modrinth:alexs-caves:${alexs_caves_version}")
+    runtimeOnly fg.deobf("maven.modrinth:alexs-caves:${alexs_caves_version}")
 
     implementation fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${player_anim}")
 //    include("dev.kosmx.player-anim:player-animation-lib-forge:${player_anim}")
