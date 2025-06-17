@@ -21,7 +21,7 @@ object NeoUItems {
     val ITEMS: DeferredRegister<Item> = DeferredRegister.create(ForgeRegistries.ITEMS, NeoUranus.ID)
 
     val REINFORCED_HAZMAT_SUIT_ARMOR_MATERIAL =
-        ACArmorMaterial("hazmat_suit", 37, intArrayOf(3, 6, 8, 3), 30, SoundEvents.ARMOR_EQUIP_IRON, 2.25f)
+        ACArmorMaterial("hazmat_suit", 37, intArrayOf(3, 8, 6, 3), 30, SoundEvents.ARMOR_EQUIP_IRON, 2.25f)
 
 
     val creativeTabItems = mutableListOf<ObjectHolderDelegate<Item>>()
