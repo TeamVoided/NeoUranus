@@ -1,7 +1,7 @@
 package org.teamvoided.neouranus.mixin;
 
 import com.github.alexmodguy.alexscaves.server.block.AcidBlock;
-import example.examplemod.reg.CorrosionReg;
+import org.teamvoided.neouranus.reg.CorrosionReg;
 import net.minecraft.world.level.block.Block;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
