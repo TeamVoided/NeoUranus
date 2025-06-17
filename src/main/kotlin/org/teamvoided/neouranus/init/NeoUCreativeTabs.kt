@@ -17,7 +17,7 @@ object NeoUCreativeTabs {
     val TAB_NEO_URANUS = CREATIVE_TABS.register("neouranus") {
         CreativeModeTab.builder()
             .title(Component.translatable("NeoUranus"))
-            .icon { ItemStack(NeoUBlocks.CUT_BRASS.get()) }
+            .icon { ItemStack(NeoUItems.REINFORCED_HAZMAT_MASK) }
             .displayItems { _, output -> NeoUItems.creativeTabItems.forEach { output.accept(it.get()) } }
             .build()
     }

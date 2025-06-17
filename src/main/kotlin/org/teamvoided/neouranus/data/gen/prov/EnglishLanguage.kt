@@ -17,6 +17,7 @@ class EnglishLanguage(event: GatherDataEvent) : LanguageProvider(event.generator
 
     public override fun addTranslations() {
         items.forEach { add(it.get().descriptionId, genLang(id(it.get().asItem()))) }
+        add("emi.category.neouranus.corrosion", "Corrosion")
     }
 
     private fun genLang(id: ResourceLocation): String = WordUtils.capitalize(id.path.replace("_", " "))
