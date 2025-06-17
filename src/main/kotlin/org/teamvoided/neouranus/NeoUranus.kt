@@ -1,5 +1,6 @@
 package org.teamvoided.neouranus
 
+import com.github.alexmodguy.alexscaves.AlexsCaves
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.fml.common.Mod
@@ -16,6 +17,8 @@ object NeoUranus {
     // the logger for our mod
     val log: Logger = LogManager.getLogger(ID)
     fun id(path: String) = ResourceLocation.fromNamespaceAndPath(ID, path)
+    fun mc(id: String) = ResourceLocation.withDefaultNamespace(id)
+    fun alexId(path: String) = ResourceLocation.fromNamespaceAndPath(AlexsCaves.MODID, path)
 
     init {
         log.info("Loading NeoUranus")

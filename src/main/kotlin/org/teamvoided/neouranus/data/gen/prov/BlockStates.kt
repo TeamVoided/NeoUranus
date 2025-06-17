@@ -1,6 +1,5 @@
 package org.teamvoided.neouranus.data.gen.prov
 
-import com.github.alexmodguy.alexscaves.AlexsCaves
 import org.teamvoided.neouranus.NeoUranus
 import org.teamvoided.neouranus.NeoUranus.id
 import org.teamvoided.neouranus.init.NeoUBlocks
@@ -10,6 +9,8 @@ import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ConfiguredModel
 import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.registries.ForgeRegistries
+import org.teamvoided.neouranus.NeoUranus.alexId
+import org.teamvoided.neouranus.NeoUranus.mc
 
 class BlockStates(event: GatherDataEvent) :
     BlockStateProvider(event.generator.packOutput, NeoUranus.ID, event.existingFileHelper) {
@@ -35,21 +36,21 @@ class BlockStates(event: GatherDataEvent) :
         NeoUBlocks.OXIDIZED_COPPER_TILES to NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES
     )
     val scrap = listOf(
-        NeoUBlocks.CUT_SCRAP_METAL_ONE to ResourceLocation(AlexsCaves.MODID, "block/scrap_metal_0"),
-        NeoUBlocks.CUT_SCRAP_METAL_TWO to ResourceLocation(AlexsCaves.MODID, "block/scrap_metal_1"),
-        NeoUBlocks.CUT_SCRAP_METAL_THREE to ResourceLocation(AlexsCaves.MODID, "block/scrap_metal_2"),
-        NeoUBlocks.CUT_SCRAP_METAL_FOUR to ResourceLocation(AlexsCaves.MODID, "block/scrap_metal_3"),
+        NeoUBlocks.CUT_SCRAP_METAL_ONE to alexId("block/scrap_metal_0"),
+        NeoUBlocks.CUT_SCRAP_METAL_TWO to alexId("block/scrap_metal_1"),
+        NeoUBlocks.CUT_SCRAP_METAL_THREE to alexId("block/scrap_metal_2"),
+        NeoUBlocks.CUT_SCRAP_METAL_FOUR to alexId("block/scrap_metal_3"),
         NeoUBlocks.CUT_SCRAP_METAL_FIVE to id("block/scrap_metal_custom"),
-        NeoUBlocks.CUT_SCRAP_METAL_SIX to ResourceLocation(AlexsCaves.MODID, "block/scrap_metal_4"),
-        NeoUBlocks.CUT_SCRAP_METAL_SEVEN to ResourceLocation(AlexsCaves.MODID, "block/scrap_metal_5"),
+        NeoUBlocks.CUT_SCRAP_METAL_SIX to alexId("block/scrap_metal_4"),
+        NeoUBlocks.CUT_SCRAP_METAL_SEVEN to alexId("block/scrap_metal_5"),
 
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_0"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_1"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_2"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_3"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_4"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_5"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN to ResourceLocation(AlexsCaves.MODID, "block/rusty_scrap_metal_6"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE to alexId("block/rusty_scrap_metal_0"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO to alexId("block/rusty_scrap_metal_1"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE to alexId("block/rusty_scrap_metal_2"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR to alexId("block/rusty_scrap_metal_3"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE to alexId("block/rusty_scrap_metal_4"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX to alexId("block/rusty_scrap_metal_5"),
+        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN to alexId("block/rusty_scrap_metal_6"),
     )
 
     override fun registerStatesAndModels() {
@@ -61,7 +62,7 @@ class BlockStates(event: GatherDataEvent) :
     fun scrap(block: Block, texture: ResourceLocation) {
         val model = models()
             .getBuilder(name(block))
-            .parent(ConfiguredModel(exFile(ResourceLocation("block/cube_all"))).model)
+            .parent(ConfiguredModel(exFile(mc("block/cube_all"))).model)
             .texture("all", texture)
         getVariantBuilder(block)
             .partialState()
