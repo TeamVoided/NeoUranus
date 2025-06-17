@@ -1,7 +1,6 @@
 package org.teamvoided.neouranus.data.gen.prov
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
-import com.simibubi.create.AllBlocks
 import org.teamvoided.neouranus.NeoUranus.id
 import org.teamvoided.neouranus.init.NeoUBlocks
 import net.minecraft.advancements.critereon.InventoryChangeTrigger
@@ -29,12 +28,12 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
     }
 
     fun crafting(c: Consumer<FinishedRecipe>) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NeoUBlocks.CUT_BRASS.get(), 4)
+       /* ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NeoUBlocks.CUT_BRASS.get(), 4)
             .pattern("##")
             .pattern("##")
             .define('#', AllBlocks.BRASS_BLOCK.get())
             .unlockedBy(AllBlocks.BRASS_BLOCK.get())
-            .save(c, NeoUBlocks.CUT_BRASS.get())
+            .save(c, NeoUBlocks.CUT_BRASS.get())*/
 
     }
 
@@ -47,7 +46,6 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
     }
 
     fun stonecutting(c: Consumer<FinishedRecipe>) {
-        c.stonecuttingResult4(AllBlocks.BRASS_BLOCK.get(), NeoUBlocks.CUT_BRASS.get())
         c.stonecuttingResult4(Blocks.COPPER_BLOCK, NeoUBlocks.COPPER_TILES.get())
         c.stonecuttingResult4(Blocks.EXPOSED_COPPER, NeoUBlocks.EXPOSED_COPPER_TILES.get())
         c.stonecuttingResult4(Blocks.WEATHERED_COPPER, NeoUBlocks.WEATHERED_COPPER_TILES.get())

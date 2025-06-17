@@ -11,7 +11,6 @@ import thedarkcolour.kotlinforforge.forge.MOD_BUS
 object NeoUMisc {
     init {
         CorrosionReg.registerDefault()
-        CorrosionReg.registerCreate()
         println("Hello from Misc")
 
         MOD_BUS.addListener(::miscInit)

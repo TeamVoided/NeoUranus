@@ -2,7 +2,6 @@ package org.teamvoided.neouranus.data.gen.prov
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry
-import com.simibubi.create.AllItems
 import org.teamvoided.neouranus.NeoUranus
 import org.teamvoided.neouranus.data.NeoUTags
 import net.minecraft.core.HolderLookup
@@ -16,25 +15,12 @@ class ItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvider(
 ) {
     override fun addTags(provider: HolderLookup.Provider) {
         copy(NeoUTags.METAL_SCRAP_BLOCKS, NeoUTags.METAL_SCRAP_ITEMS)
-        copy(NeoUTags.CREATE_MAGNETIC_BLOCKS, NeoUTags.CREATE_MAGNETIC_ITEMS)
         this.registerModTags()
         this.registerForgeTags()
         this.registerCompatibilityTags()
     }
 
     private fun registerModTags() {
-        tag(NeoUTags.CREATE_MAGNETIC_ITEMS)
-            .add(
-                AllItems.NETHERITE_DIVING_BOOTS.get(),
-                AllItems.NETHERITE_DIVING_HELMET.get(),
-
-                AllItems.PROPELLER.get(),
-                AllItems.WHISK.get(),
-                AllItems.MINECART_COUPLING.get(),
-                AllItems.MINECART_CONTRAPTION.get(),
-                AllItems.CHEST_MINECART_CONTRAPTION.get(),
-                AllItems.FURNACE_MINECART_CONTRAPTION.get()
-            )
     }
 
     private fun registerForgeTags() {
@@ -43,10 +29,7 @@ class ItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvider(
 
     fun registerCompatibilityTags() {
         tag(ACTagRegistry.MAGNETIC_ITEMS)
-            .addTags(
-                NeoUTags.METAL_SCRAP_ITEMS,
-                NeoUTags.CREATE_MAGNETIC_ITEMS
-            )
+            .addTags(NeoUTags.METAL_SCRAP_ITEMS)
             .add(
                 ACBlockRegistry.RUSTY_BARREL.get().asItem(),
                 ACBlockRegistry.RUSTY_SCAFFOLDING.get().asItem(),
@@ -59,7 +42,5 @@ class ItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvider(
                 ModItems.IRON_KNIFE.get(),
                 ModItems.NETHERITE_KNIFE.get()
             )
-        //        tag(CompatibilityTags.CREATE_UPRIGHT_ON_BELT)
-//            .add(ModItems.MILK_BOTTLE.get())
     }
 }
