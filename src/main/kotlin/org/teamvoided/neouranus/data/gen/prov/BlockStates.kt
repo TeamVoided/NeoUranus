@@ -42,7 +42,7 @@ class BlockStates(event: GatherDataEvent) :
         NeoUBlocks.CUT_SCRAP_METAL_FOUR to alexId("block/scrap_metal_3"),
         NeoUBlocks.CUT_SCRAP_METAL_FIVE to id("block/scrap_metal_custom"),
         NeoUBlocks.CUT_SCRAP_METAL_SIX to alexId("block/scrap_metal_4"),
-        NeoUBlocks.CUT_SCRAP_METAL_SEVEN to alexId("block/scrap_metal_5"),
+        NeoUBlocks.SCRAP_METAL_TILES to alexId("block/scrap_metal_5"),
 
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE to alexId("block/rusty_scrap_metal_0"),
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO to alexId("block/rusty_scrap_metal_1"),
@@ -50,7 +50,7 @@ class BlockStates(event: GatherDataEvent) :
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR to alexId("block/rusty_scrap_metal_3"),
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE to alexId("block/rusty_scrap_metal_4"),
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX to alexId("block/rusty_scrap_metal_5"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN to alexId("block/rusty_scrap_metal_6"),
+        NeoUBlocks.RUSTY_SCRAP_METAL_TILES to alexId("block/rusty_scrap_metal_6"),
     )
 
     override fun registerStatesAndModels() {

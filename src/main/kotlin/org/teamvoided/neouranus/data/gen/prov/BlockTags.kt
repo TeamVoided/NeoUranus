@@ -66,14 +66,14 @@ class BlockTags(event: GatherDataEvent) :
                 NeoUBlocks.CUT_SCRAP_METAL_FOUR.get(),
                 NeoUBlocks.CUT_SCRAP_METAL_FIVE.get(),
                 NeoUBlocks.CUT_SCRAP_METAL_SIX.get(),
-                NeoUBlocks.CUT_SCRAP_METAL_SEVEN.get(),
+                NeoUBlocks.SCRAP_METAL_TILES.get(),
                 NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE.get(),
                 NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO.get(),
                 NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE.get(),
                 NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR.get(),
                 NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE.get(),
                 NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX.get(),
-                NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN.get(),
+                NeoUBlocks.RUSTY_SCRAP_METAL_TILES.get(),
             )
         tag(NeoUTags.COPPER_TILES)
             .add(

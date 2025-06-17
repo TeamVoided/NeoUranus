@@ -31,14 +31,14 @@ class ModBlockLootTables : BlockLootSubProvider(setOf(), FeatureFlags.REGISTRY.a
         NeoUBlocks.CUT_SCRAP_METAL_FOUR,
         NeoUBlocks.CUT_SCRAP_METAL_FIVE,
         NeoUBlocks.CUT_SCRAP_METAL_SIX,
-        NeoUBlocks.CUT_SCRAP_METAL_SEVEN,
+        NeoUBlocks.SCRAP_METAL_TILES,
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE,
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO,
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE,
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR,
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE,
         NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX,
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN,
+        NeoUBlocks.RUSTY_SCRAP_METAL_TILES,
     )
 
     override fun generate() {

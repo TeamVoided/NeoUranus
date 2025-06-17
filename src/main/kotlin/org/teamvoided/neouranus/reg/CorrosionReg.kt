@@ -20,7 +20,7 @@ object CorrosionReg {
         register(NeoUBlocks.CUT_SCRAP_METAL_FOUR, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR)
         register(NeoUBlocks.CUT_SCRAP_METAL_FIVE, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE)
         register(NeoUBlocks.CUT_SCRAP_METAL_SIX, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX)
-        register(NeoUBlocks.CUT_SCRAP_METAL_SEVEN, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN)
+        register(NeoUBlocks.SCRAP_METAL_TILES, NeoUBlocks.RUSTY_SCRAP_METAL_TILES)
         register(NeoUBlocks.COPPER_TILES, NeoUBlocks.EXPOSED_COPPER_TILES)
         register(NeoUBlocks.EXPOSED_COPPER_TILES, NeoUBlocks.WEATHERED_COPPER_TILES)
         register(NeoUBlocks.WEATHERED_COPPER_TILES, NeoUBlocks.OXIDIZED_COPPER_TILES)

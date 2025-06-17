@@ -64,7 +64,7 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
         c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_FOUR.get())
         c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_FIVE.get())
         c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_SIX.get())
-        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.CUT_SCRAP_METAL_SEVEN.get())
+        c.stonecuttingResult4(ACBlockRegistry.SCRAP_METAL.get(), NeoUBlocks.SCRAP_METAL_TILES.get())
 
         c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE.get())
         c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO.get())
@@ -72,7 +72,7 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
         c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR.get())
         c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE.get())
         c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX.get())
-        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SEVEN.get())
+        c.stonecuttingResult4(ACBlockRegistry.RUSTY_SCRAP_METAL.get(), NeoUBlocks.RUSTY_SCRAP_METAL_TILES.get())
 
     }
 

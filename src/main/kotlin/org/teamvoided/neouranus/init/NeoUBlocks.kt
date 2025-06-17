@@ -54,7 +54,7 @@ object NeoUBlocks {
     val CUT_SCRAP_METAL_FOUR = regBlockWItem("cut_scrap_metal_four") { scarpBlock() }
     val CUT_SCRAP_METAL_FIVE = regBlockWItem("cut_scrap_metal_five") { scarpBlock() }
     val CUT_SCRAP_METAL_SIX = regBlockWItem("cut_scrap_metal_six") { scarpBlock() }
-    val CUT_SCRAP_METAL_SEVEN = regBlockWItem("cut_scrap_metal_seven") { scarpBlock() }
+    val SCRAP_METAL_TILES = regBlockWItem("scrap_metal_tiles") { scarpBlock() }
 
     val CUT_RUSTY_SCRAP_METAL_ONE = regBlockWItem("cut_rusty_scrap_metal_one") { scarpBlock() }
     val CUT_RUSTY_SCRAP_METAL_TWO = regBlockWItem("cut_rusty_scrap_metal_two") { scarpBlock() }
@@ -62,7 +62,7 @@ object NeoUBlocks {
     val CUT_RUSTY_SCRAP_METAL_FOUR = regBlockWItem("cut_rusty_scrap_metal_four") { scarpBlock() }
     val CUT_RUSTY_SCRAP_METAL_FIVE = regBlockWItem("cut_rusty_scrap_metal_five") { scarpBlock() }
     val CUT_RUSTY_SCRAP_METAL_SIX = regBlockWItem("cut_rusty_scrap_metal_six") { scarpBlock() }
-    val CUT_RUSTY_SCRAP_METAL_SEVEN = regBlockWItem("cut_rusty_scrap_metal_seven") { scarpBlock() }
+    val RUSTY_SCRAP_METAL_TILES = regBlockWItem("rusty_scrap_metal_tiles") { scarpBlock() }
 
     init {
         BLOCKS.register(MOD_BUS)
