@@ -48,27 +48,26 @@ object NeoUBlocks {
         )
     }
 
-    val CUT_SCRAP_METAL_ONE = regBlockWItem("cut_scrap_metal_one") { scarpBlock() }
-    val CUT_SCRAP_METAL_TWO = regBlockWItem("cut_scrap_metal_two") { scarpBlock() }
-    val CUT_SCRAP_METAL_THREE = regBlockWItem("cut_scrap_metal_three") { scarpBlock() }
-    val CUT_SCRAP_METAL_FOUR = regBlockWItem("cut_scrap_metal_four") { scarpBlock() }
-    val CUT_SCRAP_METAL_FIVE = regBlockWItem("cut_scrap_metal_five") { scarpBlock() }
-    val CUT_SCRAP_METAL_SIX = regBlockWItem("cut_scrap_metal_six") { scarpBlock() }
+    val CUT_SCRAP_METAL = regBlockWItem("cut_scrap_metal") { scarpBlock() }
+    val VERTICALLY_CUT_SCRAP_METAL = regBlockWItem("vertically_cut_scrap_metal") { scarpBlock() }
+    val SCRAP_METAL_BRICKS = regBlockWItem("scrap_metal_bricks") { scarpBlock() }
+    val INVERTED_SCRAP_METAL_BRICKS = regBlockWItem("inverted_scrap_metal_bricks") { scarpBlock() }
+    val FORMED_SCRAP_METAL = regBlockWItem("formed_scrap_metal") { scarpBlock() }
+    val REVERSE_FORMED_SCRAP_METAL = regBlockWItem("reverse_formed_scrap_metal") { scarpBlock() }
     val SCRAP_METAL_TILES = regBlockWItem("scrap_metal_tiles") { scarpBlock() }
 
-    val CUT_RUSTY_SCRAP_METAL_ONE = regBlockWItem("cut_rusty_scrap_metal_one") { scarpBlock() }
-    val CUT_RUSTY_SCRAP_METAL_TWO = regBlockWItem("cut_rusty_scrap_metal_two") { scarpBlock() }
-    val CUT_RUSTY_SCRAP_METAL_THREE = regBlockWItem("cut_rusty_scrap_metal_three") { scarpBlock() }
-    val CUT_RUSTY_SCRAP_METAL_FOUR = regBlockWItem("cut_rusty_scrap_metal_four") { scarpBlock() }
-    val CUT_RUSTY_SCRAP_METAL_FIVE = regBlockWItem("cut_rusty_scrap_metal_five") { scarpBlock() }
-    val CUT_RUSTY_SCRAP_METAL_SIX = regBlockWItem("cut_rusty_scrap_metal_six") { scarpBlock() }
+    val RUSTY_CUT_SCRAP_METAL = regBlockWItem("rusty_cut_scrap_metal") { scarpBlock() }
+    val RUSTY_VERTICALLY_CUT_SCRAP_METAL = regBlockWItem("rusty_vertically_cut_scrap_metal") { scarpBlock() }
+    val RUSTY_SCRAP_METAL_BRICKS = regBlockWItem("rusty_scrap_metal_bricks") { scarpBlock() }
+    val RUSTY_INVERTED_SCRAP_METAL_BRICKS = regBlockWItem("rusty_inverted_scrap_metal_bricks") { scarpBlock() }
+    val RUSTY_FORMED_SCRAP_METAL = regBlockWItem("rusty_formed_scrap_metal") { scarpBlock() }
+    val RUSTY_REVERSE_FORMED_SCRAP_METAL = regBlockWItem("rusty_reverse_formed_scrap_metal") { scarpBlock() }
     val RUSTY_SCRAP_METAL_TILES = regBlockWItem("rusty_scrap_metal_tiles") { scarpBlock() }
 
     init {
         BLOCKS.register(MOD_BUS)
     }
 
-    @Suppress("MagicNumber")
     private fun copperBlock(state: WeatherState, mapColor: MapColor) =
         WeatheringCopperFullBlock(
             state, BlockBehaviour.Properties.of()
@@ -78,7 +77,6 @@ object NeoUBlocks {
                 .sound(SoundType.COPPER)
         )
 
-    @Suppress("MagicNumber")
     private fun scarpBlock() = Block(
         BlockBehaviour.Properties.of()
             .mapColor(MapColor.METAL)

@@ -36,20 +36,20 @@ class BlockStates(event: GatherDataEvent) :
         NeoUBlocks.OXIDIZED_COPPER_TILES to NeoUBlocks.WAXED_OXIDIZED_COPPER_TILES
     )
     val scrap = listOf(
-        NeoUBlocks.CUT_SCRAP_METAL_ONE to alexId("block/scrap_metal_0"),
-        NeoUBlocks.CUT_SCRAP_METAL_TWO to alexId("block/scrap_metal_1"),
-        NeoUBlocks.CUT_SCRAP_METAL_THREE to alexId("block/scrap_metal_2"),
-        NeoUBlocks.CUT_SCRAP_METAL_FOUR to alexId("block/scrap_metal_3"),
-        NeoUBlocks.CUT_SCRAP_METAL_FIVE to id("block/scrap_metal_custom"),
-        NeoUBlocks.CUT_SCRAP_METAL_SIX to alexId("block/scrap_metal_4"),
+        NeoUBlocks.CUT_SCRAP_METAL to alexId("block/scrap_metal_0"),
+        NeoUBlocks.SCRAP_METAL_BRICKS to alexId("block/scrap_metal_1"),
+        NeoUBlocks.INVERTED_SCRAP_METAL_BRICKS to alexId("block/scrap_metal_2"),
+        NeoUBlocks.VERTICALLY_CUT_SCRAP_METAL to alexId("block/scrap_metal_3"),
+        NeoUBlocks.FORMED_SCRAP_METAL to id("block/scrap_metal_custom"),
+        NeoUBlocks.REVERSE_FORMED_SCRAP_METAL to alexId("block/scrap_metal_4"),
         NeoUBlocks.SCRAP_METAL_TILES to alexId("block/scrap_metal_5"),
 
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE to alexId("block/rusty_scrap_metal_0"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO to alexId("block/rusty_scrap_metal_1"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE to alexId("block/rusty_scrap_metal_2"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR to alexId("block/rusty_scrap_metal_3"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE to alexId("block/rusty_scrap_metal_4"),
-        NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX to alexId("block/rusty_scrap_metal_5"),
+        NeoUBlocks.RUSTY_CUT_SCRAP_METAL to alexId("block/rusty_scrap_metal_0"),
+        NeoUBlocks.RUSTY_SCRAP_METAL_BRICKS to alexId("block/rusty_scrap_metal_1"),
+        NeoUBlocks.RUSTY_INVERTED_SCRAP_METAL_BRICKS to alexId("block/rusty_scrap_metal_2"),
+        NeoUBlocks.RUSTY_VERTICALLY_CUT_SCRAP_METAL to alexId("block/rusty_scrap_metal_3"),
+        NeoUBlocks.RUSTY_FORMED_SCRAP_METAL to alexId("block/rusty_scrap_metal_4"),
+        NeoUBlocks.RUSTY_REVERSE_FORMED_SCRAP_METAL to alexId("block/rusty_scrap_metal_5"),
         NeoUBlocks.RUSTY_SCRAP_METAL_TILES to alexId("block/rusty_scrap_metal_6"),
     )
 

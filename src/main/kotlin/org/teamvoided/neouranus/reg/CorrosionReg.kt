@@ -14,12 +14,12 @@ object CorrosionReg {
     fun register(input: RegBlock, output: RegBlock): Boolean = CORROSION_MAP.putIfAbsent(input, output) != null
 
     fun registerDefault() {
-        register(NeoUBlocks.CUT_SCRAP_METAL_ONE, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_ONE)
-        register(NeoUBlocks.CUT_SCRAP_METAL_TWO, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_TWO)
-        register(NeoUBlocks.CUT_SCRAP_METAL_THREE, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_THREE)
-        register(NeoUBlocks.CUT_SCRAP_METAL_FOUR, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FOUR)
-        register(NeoUBlocks.CUT_SCRAP_METAL_FIVE, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_FIVE)
-        register(NeoUBlocks.CUT_SCRAP_METAL_SIX, NeoUBlocks.CUT_RUSTY_SCRAP_METAL_SIX)
+        register(NeoUBlocks.CUT_SCRAP_METAL, NeoUBlocks.RUSTY_CUT_SCRAP_METAL)
+        register(NeoUBlocks.SCRAP_METAL_BRICKS, NeoUBlocks.RUSTY_SCRAP_METAL_BRICKS)
+        register(NeoUBlocks.INVERTED_SCRAP_METAL_BRICKS, NeoUBlocks.RUSTY_INVERTED_SCRAP_METAL_BRICKS)
+        register(NeoUBlocks.VERTICALLY_CUT_SCRAP_METAL, NeoUBlocks.RUSTY_VERTICALLY_CUT_SCRAP_METAL)
+        register(NeoUBlocks.FORMED_SCRAP_METAL, NeoUBlocks.RUSTY_FORMED_SCRAP_METAL)
+        register(NeoUBlocks.REVERSE_FORMED_SCRAP_METAL, NeoUBlocks.RUSTY_REVERSE_FORMED_SCRAP_METAL)
         register(NeoUBlocks.SCRAP_METAL_TILES, NeoUBlocks.RUSTY_SCRAP_METAL_TILES)
         register(NeoUBlocks.COPPER_TILES, NeoUBlocks.EXPOSED_COPPER_TILES)
         register(NeoUBlocks.EXPOSED_COPPER_TILES, NeoUBlocks.WEATHERED_COPPER_TILES)
