@@ -17,6 +17,11 @@ object NeoUTags {
 
     val METAL_SCRAP_ITEMS = itemTag("metal_scrap")
 
+    val HAZMAT_ARMOR = itemTag("hazmat_armor")
+
+    @JvmField
+    val HAZMAT_PROTECTION = itemTag("hazmat_protection")
+
     private fun itemTag(name: String): TagKey<Item> = TagKey.create(Registries.ITEM, id(name))
     private fun blockTag(name: String): TagKey<Block> = TagKey.create(Registries.BLOCK, id(name))
 

@@ -7,6 +7,7 @@
   "mixins": [
     "AcidBlockAccessor",
     "AcidBlockMixin",
+    "HazmatArmorItemMixin",
     "HologramProjectorBlockEntityAccessor"
   ],
   "injectors": {

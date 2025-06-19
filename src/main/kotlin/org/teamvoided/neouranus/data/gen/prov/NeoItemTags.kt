@@ -20,16 +20,24 @@ class NeoItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvid
         copy(NeoUTags.NEO_MAGNETIC_BLOCKS, NeoUTags.NEO_MAGNETIC_ITEMS)
         copy(NeoUTags.METAL_SCRAP_BLOCKS, NeoUTags.METAL_SCRAP_ITEMS)
 
-        registerModTags()
-        registerForgeTags()
+        hazmat()
         magnetism()
     }
 
-    private fun registerModTags() {
-    }
-
-    private fun registerForgeTags() {
-//        tag(ForgeTags.BERRIES).add(Items.SWEET_BERRIES, Items.GLOW_BERRIES)
+    private fun hazmat() {
+        tag(NeoUTags.HAZMAT_ARMOR)
+            .add(
+                ACItemRegistry.HAZMAT_MASK.get(),
+                ACItemRegistry.HAZMAT_CHESTPLATE.get(),
+                ACItemRegistry.HAZMAT_LEGGINGS.get(),
+                ACItemRegistry.HAZMAT_BOOTS.get(),
+                NeoUItems.REINFORCED_HAZMAT_MASK.get(),
+                NeoUItems.REINFORCED_HAZMAT_CHESTPLATE.get(),
+                NeoUItems.REINFORCED_HAZMAT_LEGGINGS.get(),
+                NeoUItems.REINFORCED_HAZMAT_BOOTS.get(),
+            )
+        tag(NeoUTags.HAZMAT_PROTECTION)
+            .addTag(NeoUTags.HAZMAT_ARMOR)
     }
 
     fun magnetism() {
