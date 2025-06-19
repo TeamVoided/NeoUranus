@@ -8,7 +8,7 @@ import org.teamvoided.neouranus.data.gen.prov.BlockStates
 import org.teamvoided.neouranus.data.gen.prov.BlockTags
 import org.teamvoided.neouranus.data.gen.prov.EnglishLanguage
 import org.teamvoided.neouranus.data.gen.prov.ItemModels
-import org.teamvoided.neouranus.data.gen.prov.ItemTags
+import org.teamvoided.neouranus.data.gen.prov.NeoItemTags
 import org.teamvoided.neouranus.data.gen.prov.LootTables
 import org.teamvoided.neouranus.data.gen.prov.Recipes
 
@@ -31,7 +31,7 @@ object DataGenerators {
         }*/
 
         generator.addProvider(event.includeServer(), blockTags)
-        generator.addProvider(event.includeServer(), ItemTags(event, blockTags))
+        generator.addProvider(event.includeServer(), NeoItemTags(event, blockTags))
 //        generator.addProvider(event.includeServer(), EntityTags(generator.packOutput, FarmersDelight.MODID, helper))
         generator.addProvider(event.includeServer(), Recipes(event))
 //        generator.addProvider(event.includeServer(), Advancements(generator))

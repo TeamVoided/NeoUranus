@@ -2,14 +2,15 @@ package org.teamvoided.neouranus.data.gen.prov
 
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
 import com.github.alexmodguy.alexscaves.server.misc.ACTagRegistry
+import net.minecraft.core.HolderLookup
+import net.minecraft.tags.BlockTags
+import net.minecraft.world.level.block.Blocks
+import net.minecraftforge.common.data.BlockTagsProvider
+import net.minecraftforge.data.event.GatherDataEvent
 import org.teamvoided.neouranus.NeoUranus
 import org.teamvoided.neouranus.data.NeoUTags
 import org.teamvoided.neouranus.init.NeoUBlocks
-import net.minecraft.core.HolderLookup
-import net.minecraft.tags.BlockTags
-import net.minecraftforge.common.data.BlockTagsProvider
-import net.minecraftforge.data.event.GatherDataEvent
-import vectorwing.farmersdelight.common.registry.ModBlocks
+import vectorwing.farmersdelight.common.registry.ModBlocks as FDBlocks
 
 
 class BlockTags(event: GatherDataEvent) :
@@ -19,7 +20,7 @@ class BlockTags(event: GatherDataEvent) :
         this.registerModTags()
         this.registerMinecraftTags()
         this.registerForgeTags()
-        this.registerCompatibilityTags()
+        this.magnetism()
         this.registerBlockMineables()
     }
 
@@ -43,11 +44,11 @@ class BlockTags(event: GatherDataEvent) :
     }
 
     fun registerMinecraftTags() {
-//        tag(BlockTags.CLIMBABLE).add(ModBlocks.ROPE.get(), ModBlocks.TOMATO_CROP.get())
+//        tag(BlockTags.CLIMBABLE).add(FDBlocks.ROPE.get(), FDBlocks.TOMATO_CROP.get())
     }
 
     fun registerForgeTags() {
-//        tag(BlockTags.DIRT).add(ModBlocks.RICH_SOIL.get())
+//        tag(BlockTags.DIRT).add(FDBlocks.RICH_SOIL.get())
 //        this.tag(ForgeTags.MINEABLE_WITH_KNIFE)
     }
 
@@ -88,18 +89,24 @@ class BlockTags(event: GatherDataEvent) :
             )
     }
 
-    fun registerCompatibilityTags() {
+    fun magnetism() {
+        // Magnetism
         tag(ACTagRegistry.MAGNETIC_BLOCKS)
-            .addTags(
-                NeoUTags.METAL_SCRAP_BLOCKS,
-            )
+            .addTag(NeoUTags.NEO_MAGNETIC_BLOCKS)
+        tag(NeoUTags.NEO_MAGNETIC_BLOCKS)
+            .addTag(NeoUTags.METAL_SCRAP_BLOCKS)
             .add(
                 ACBlockRegistry.RUSTY_BARREL.get(),
                 ACBlockRegistry.RUSTY_SCAFFOLDING.get(),
+                ACBlockRegistry.HEART_OF_IRON.get(),
+                ACBlockRegistry.DRAIN.get(),
+                ACBlockRegistry.NUCLEAR_BOMB.get(),
+                ACBlockRegistry.QUARRY.get(),
+                Blocks.PISTON,
+                Blocks.TRIPWIRE_HOOK,
             )
-            .add(
-                ModBlocks.SKILLET.get(),
-                ModBlocks.COOKING_POT.get()
-            )
+            .addOptional(FDBlocks.SKILLET.id)
+            .addOptional(FDBlocks.COOKING_POT.id)
+            .addOptional(FDBlocks.STOVE.id)
     }
 }
