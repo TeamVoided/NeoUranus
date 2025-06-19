@@ -10,7 +10,7 @@ import java.util.Map;
 @Mixin(AcidBlock.class)
 public interface AcidBlockAccessor {
     @Accessor("CORRODES_INTERACTIONS")
-    static Map<Block, Block> neo_get_CORRODES_INTERACTIONS() {
+    static Map<Block, Block> neo_CORRODES_INTERACTIONS() {
         throw new IllegalStateException();
     }
 }

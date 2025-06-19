@@ -37,7 +37,7 @@ class NeoEmiPlugin : EmiPlugin {
         registry.addWorkstation(CORROSION_CATEGORY, CORROSION_WORKSTATION);
         registry.addDeferredRecipes { consumer ->
             AcidBlock.doesBlockCorrode(Blocks.AIR.defaultBlockState())
-            for ((input, output) in AcidBlockAccessor.neo_get_CORRODES_INTERACTIONS()) {
+            for ((input, output) in AcidBlockAccessor.neo_CORRODES_INTERACTIONS()) {
                 try {
                     val inputItem = input.asItem()
                     val outputItem = output.asItem()
