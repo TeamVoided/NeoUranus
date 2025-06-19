@@ -12,6 +12,8 @@ import org.teamvoided.neouranus.NeoUranus
 import org.teamvoided.neouranus.data.NeoUTags
 import org.teamvoided.neouranus.init.NeoUItems
 import vectorwing.farmersdelight.common.registry.ModItems
+import vectorwing.farmersdelight.common.tag.ForgeTags
+import vectorwing.farmersdelight.common.tag.ModTags
 
 class NeoItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvider(
     event.generator.packOutput, event.lookupProvider, blockTags.contentsGetter(), NeoUranus.ID, event.existingFileHelper
@@ -22,6 +24,7 @@ class NeoItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvid
 
         hazmat()
         magnetism()
+        compatibility()
     }
 
     private fun hazmat() {
@@ -107,5 +110,20 @@ class NeoItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvid
             )
             .addOptional(ModItems.DIAMOND_KNIFE.id)
 
+    }
+
+    fun compatibility() {
+        tag(ModTags.KNIVES).add(
+            ACItemRegistry.DESOLATE_DAGGER.get(),
+            NeoUItems.SCARLET_NEODYMIUM_KNIFE.get(),
+            NeoUItems.AZURE_NEODYMIUM_KNIFE.get()
+        )
+        tag(ForgeTags.TOOLS_KNIVES).add(
+            ACItemRegistry.DESOLATE_DAGGER.get(),
+            NeoUItems.SCARLET_NEODYMIUM_KNIFE.get(),
+            NeoUItems.AZURE_NEODYMIUM_KNIFE.get()
+        )
+        tag(ACTagRegistry.TELETOR_SPAWNS_WITH)
+            .addOptional(ModItems.IRON_KNIFE.id)
     }
 }

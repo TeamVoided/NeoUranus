@@ -31,13 +31,20 @@ class Recipes(event: GatherDataEvent) : RecipeProvider(event.generator.packOutpu
     }
 
     fun crafting(c: Consumer<FinishedRecipe>) {
-        /* ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, NeoUBlocks.CUT_BRASS.get(), 4)
-             .pattern("##")
-             .pattern("##")
-             .define('#', AllBlocks.BRASS_BLOCK.get())
-             .unlockedBy(AllBlocks.BRASS_BLOCK.get())
-             .save(c, NeoUBlocks.CUT_BRASS.get())*/
-
+         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, NeoUItems.SCARLET_NEODYMIUM_KNIFE.get())
+             .pattern("#")
+             .pattern("I")
+             .define('#', ACItemRegistry.SCARLET_NEODYMIUM_INGOT.get())
+             .define('I', Items.STICK)
+             .unlockedBy(ACItemRegistry.SCARLET_NEODYMIUM_INGOT.get())
+             .save(c, NeoUItems.SCARLET_NEODYMIUM_KNIFE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, NeoUItems.AZURE_NEODYMIUM_KNIFE.get())
+            .pattern("#")
+            .pattern("I")
+            .define('#', ACItemRegistry.AZURE_NEODYMIUM_INGOT.get())
+            .define('I', Items.STICK)
+            .unlockedBy(ACItemRegistry.AZURE_NEODYMIUM_INGOT.get())
+            .save(c, NeoUItems.AZURE_NEODYMIUM_KNIFE.get())
     }
 
     fun shapeless(c: Consumer<FinishedRecipe>) {

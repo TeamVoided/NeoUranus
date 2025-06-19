@@ -18,11 +18,18 @@ class ItemModels(event: GatherDataEvent, helper: ExistingFileHelper) :
         NeoUItems.REINFORCED_HAZMAT_LEGGINGS,
         NeoUItems.REINFORCED_HAZMAT_BOOTS,
     )
+    val handHeld = listOf(
+        NeoUItems.SCARLET_NEODYMIUM_KNIFE,
+        NeoUItems.AZURE_NEODYMIUM_KNIFE,
+    )
 
     override fun registerModels() {
         hammerItem(NeoUItems.BASIC_HAMMER.get())
         for (item in simpleFlat) {
             this.basicItem(item.registryObject.id)
+        }
+        for (item in handHeld) {
+            heldItem(item.get())
         }
     }
 
