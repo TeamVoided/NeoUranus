@@ -6,7 +6,8 @@
   "refmap": "neouranus.refmap.json",
   "mixins": [
     "AcidBlockAccessor",
-    "AcidBlockMixin"
+    "AcidBlockMixin",
+    "HologramProjectorBlockEntityAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

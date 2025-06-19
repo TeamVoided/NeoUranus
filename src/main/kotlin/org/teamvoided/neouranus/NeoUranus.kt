@@ -29,14 +29,9 @@ object NeoUranus {
         NeoUItems
         NeoUEntities
         NeoUCreativeTabs
-        NeoUMisc
+        NeoUEvents
 
         runWhenOn(Dist.CLIENT) { NeoUClient }
-        MOD_BUS.addListener(::commonInit)
-    }
-
-    fun commonInit(event: FMLCommonSetupEvent) {
-        NeoUItems.setUp()
     }
 
 }
