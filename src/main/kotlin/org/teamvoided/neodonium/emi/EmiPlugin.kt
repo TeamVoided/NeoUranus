@@ -1,6 +1,5 @@
 package org.teamvoided.neodonium.emi
 
-import com.github.alexmodguy.alexscaves.AlexsCaves.MODID
 import com.github.alexmodguy.alexscaves.server.block.ACBlockRegistry
 import com.github.alexmodguy.alexscaves.server.block.AcidBlock
 import com.github.alexmodguy.alexscaves.server.block.fluid.ACFluidRegistry
@@ -19,20 +18,21 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.material.Fluids
+import org.teamvoided.neodonium.Neodonium.ID
 import org.teamvoided.neodonium.Neodonium.id
 import org.teamvoided.neodonium.Neodonium.log
 import org.teamvoided.neodonium.mixin.AcidBlockAccessor
 import java.util.function.Supplier
 
-val CORROSION_WORKSTATION = EmiStack.of(ACFluidRegistry.ACID_FLUID_SOURCE.get())
+val CORROSION_WORKSTATION: EmiStack = EmiStack.of(ACFluidRegistry.ACID_FLUID_SOURCE.get())
 val CORROSION_CATEGORY = EmiRecipeCategory(id("corrosion"), CORROSION_WORKSTATION)
 private fun sid(type: String, name: String): ResourceLocation = id("/$type/$name")
 
 @EmiEntrypoint
 class NeoEmiPlugin : EmiPlugin {
     override fun register(registry: EmiRegistry) {
-        registry.addCategory(CORROSION_CATEGORY);
-        registry.addWorkstation(CORROSION_CATEGORY, CORROSION_WORKSTATION);
+        registry.addCategory(CORROSION_CATEGORY)
+        registry.addWorkstation(CORROSION_CATEGORY, CORROSION_WORKSTATION)
         registry.addDeferredRecipes { consumer ->
             AcidBlock.doesBlockCorrode(Blocks.AIR.defaultBlockState())
             for ((input, output) in AcidBlockAccessor.neo_CORRODES_INTERACTIONS()) {
@@ -59,7 +59,7 @@ class NeoEmiPlugin : EmiPlugin {
         // Fluids
         addRecipeSafe(registry) {
             EmiWorldInteractionRecipe.builder()
-                .id(sid("world/fluid_interaction", "$MODID/mud"))
+                .id(sid("world/fluid_interaction", "$ID/mud"))
                 .leftInput(acidCatalyst)
                 .rightInput(waterCatalyst, true)
                 .output(EmiStack.of(Items.MUD))
@@ -67,7 +67,7 @@ class NeoEmiPlugin : EmiPlugin {
         }
         addRecipeSafe(registry) {
             EmiWorldInteractionRecipe.builder()
-                .id(sid("world/fluid_interaction", "$MODID/radrock"))
+                .id(sid("world/fluid_interaction", "$ID/radrock"))
                 .leftInput(acidCatalyst)
                 .rightInput(lavaCatalyst, true)
                 .output(EmiStack.of(ACBlockRegistry.RADROCK.get()))
@@ -75,7 +75,7 @@ class NeoEmiPlugin : EmiPlugin {
         }
         addRecipeSafe(registry) {
             EmiWorldInteractionRecipe.builder()
-                .id(sid("world/fluid_interaction", "$MODID/blue_rock_candy"))
+                .id(sid("world/fluid_interaction", "$ID/blue_rock_candy"))
                 .leftInput(sodaCatalyst)
                 .rightInput(waterCatalyst, true)
                 .output(EmiStack.of(ACBlockRegistry.BLUE_ROCK_CANDY.get()))
@@ -83,7 +83,7 @@ class NeoEmiPlugin : EmiPlugin {
         }
         addRecipeSafe(registry) {
             EmiWorldInteractionRecipe.builder()
-                .id(sid("world/fluid_interaction", "$MODID/orange_rock_candy"))
+                .id(sid("world/fluid_interaction", "$ID/orange_rock_candy"))
                 .leftInput(sodaCatalyst)
                 .rightInput(lavaCatalyst, true)
                 .output(EmiStack.of(ACBlockRegistry.ORANGE_ROCK_CANDY.get()))
@@ -91,7 +91,7 @@ class NeoEmiPlugin : EmiPlugin {
         }
         addRecipeSafe(registry) {
             EmiWorldInteractionRecipe.builder()
-                .id(sid("world/fluid_interaction", "$MODID/green_rock_candy"))
+                .id(sid("world/fluid_interaction", "$ID/green_rock_candy"))
                 .leftInput(sodaCatalyst)
                 .rightInput(acidCatalyst, true)
                 .output(EmiStack.of(ACBlockRegistry.GREEN_ROCK_CANDY.get()))

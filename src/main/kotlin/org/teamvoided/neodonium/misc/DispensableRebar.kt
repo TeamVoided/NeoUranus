@@ -1,21 +1,17 @@
 package org.teamvoided.neodonium.misc
 
-import org.teamvoided.neodonium.entity.ThrownRebar
-import net.minecraft.core.BlockSource
-import net.minecraft.core.Direction
-import net.minecraft.core.dispenser.DispenseItemBehavior
+import net.minecraft.core.Position
+import net.minecraft.core.dispenser.AbstractProjectileDispenseBehavior
+import net.minecraft.world.entity.projectile.AbstractArrow
+import net.minecraft.world.entity.projectile.Projectile
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.block.DispenserBlock
+import net.minecraft.world.level.Level
+import org.teamvoided.neodonium.entity.ThrownRebar
 
-class DispensableRebar : DispenseItemBehavior {
-    override fun dispense(source: BlockSource, stack: ItemStack): ItemStack {
-        val direction: Direction = source.blockState.getValue(DispenserBlock.FACING)
-        val world = source.level
-        val pos = source.pos.offset(direction.normal)
-
-        val rebar = ThrownRebar(world)
-        rebar.shoot(pos.x + 0.5, pos.y + .5, pos.z + .5, 0.5f, 0f)
-        world.addFreshEntity(rebar)
-        return stack
+class DispensableRebar : AbstractProjectileDispenseBehavior() {
+    override fun getProjectile(level: Level, pos: Position, stack: ItemStack): Projectile {
+        val rebar = ThrownRebar(level, pos.x(), pos.y(), pos.z())
+        rebar.pickup = AbstractArrow.Pickup.ALLOWED
+        return rebar
     }
 }
