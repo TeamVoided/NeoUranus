@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "org.teamvoided.neodonium.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "neodonium.refmap.json",
+  "mixins": [
+    "AcidBlockAccessor",
+    "AcidBlockMixin",
+    "HazmatArmorItemMixin",
+    "HologramProjectorBlockEntityAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

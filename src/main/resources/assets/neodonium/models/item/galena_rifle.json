@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "neodonium:item/galena_rifle_blue"
+  },
+   "overrides": [
+    {
+      "predicate": {
+        "neodonium:polarity": 0.0
+      },
+      "model": "neodonium:item/galena_rifle_blue"
+    },
+    {
+      "predicate": {
+        "neodonium:polarity": 1.0
+      },
+      "model": "neodonium:item/galena_rifle_red"
+    }
+  ]
+}
