@@ -90,7 +90,6 @@ class NeoItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvid
                 Items.DIAMOND_LEGGINGS,
                 Items.DIAMOND_BOOTS,
                 Items.DIAMOND_HORSE_ARMOR,
-                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE,
                 // Emerald
                 Items.EMERALD,
                 Items.EMERALD_BLOCK,
@@ -98,7 +97,7 @@ class NeoItemTags(event: GatherDataEvent, blockTags: BlockTags) : ItemTagsProvid
                 Items.LAPIS_LAZULI,
                 Items.LAPIS_BLOCK,
                 // Misc
-                Items.SCULK_CATALYST,
+                Items.CALIBRATED_SCULK_SENSOR,
                 Items.TINTED_GLASS,
                 Items.PRISMARINE_CRYSTALS,
                 Items.SEA_LANTERN
