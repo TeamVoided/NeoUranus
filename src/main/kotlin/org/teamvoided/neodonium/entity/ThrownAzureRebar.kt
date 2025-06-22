@@ -36,7 +36,6 @@ class ThrownAzureRebar : AbstractThrownRebar {
 
     override fun getPickupItem(): ItemStack = ItemStack(ACBlockRegistry.RUSTY_REBAR.get())
 
-    override fun getDefaultHitGroundSoundEvent(): SoundEvent = ACSoundRegistry.SCRAP_METAL_BREAK.get()
 
     override fun tick() {
         super.tick()

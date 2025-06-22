@@ -12,14 +12,8 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.state.BlockState
 
 class ThrownRebar : AbstractThrownRebar {
-    override val rebarType: BlockState = ACBlockRegistry.METAL_REBAR.get().defaultBlockState()
-
     constructor(type: EntityType<out AbstractArrow>, world: Level) : super(type, world)
     constructor(world: Level) : this(NeoEntities.THROWN_REBAR.get(), world)
     constructor(level: Level, x: Double, y: Double, z: Double) : super(NeoEntities.THROWN_REBAR.get(), level, x, y, z)
     constructor(shooter: LivingEntity, level: Level) : super(NeoEntities.THROWN_REBAR.get(), shooter, level)
-
-    override fun getPickupItem(): ItemStack = ItemStack(ACBlockRegistry.METAL_REBAR.get())
-
-    override fun getDefaultHitGroundSoundEvent(): SoundEvent = ACSoundRegistry.SCRAP_METAL_BREAK.get()
 }
