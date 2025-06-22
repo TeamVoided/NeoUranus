@@ -4,6 +4,7 @@ import com.github.alexmodguy.alexscaves.server.item.ACArmorMaterial
 import com.github.alexmodguy.alexscaves.server.item.ACItemRegistry
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.tags.BlockTags
+import net.minecraft.world.food.FoodProperties
 import net.minecraft.world.item.ArmorItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.SwordItem
@@ -14,6 +15,7 @@ import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import org.teamvoided.neodonium.Neodonium
 import org.teamvoided.neodonium.Neodonium.isModLoaded
+import org.teamvoided.neodonium.item.EdibleCaveInfoItem
 import org.teamvoided.neodonium.item.GalenaRifle
 import org.teamvoided.neodonium.item.HammerItem
 import org.teamvoided.neodonium.item.ReinforcedHazmatArmorItem
@@ -50,7 +52,10 @@ object NeoItems {
 
     val SCARLET_NEODYMIUM_KNIFE = regItem("scarlet_neodymium_knife") { knife(SCARLET_NEODYMIUM_MATERIAL) }
     val AZURE_NEODYMIUM_KNIFE = regItem("azure_neodymium_knife") { knife(AZURE_NEODYMIUM_MATERIAL) }
-
+    
+    val TABLET_FOOD = FoodProperties.Builder().alwaysEat().nutrition(1).build()
+    val EDIBLE_CAVE_TABLET =
+        regItem("edible_cave_tablet") { EdibleCaveInfoItem(Item.Properties().food(TABLET_FOOD), true) }
 
     init {
         ITEMS.register(MOD_BUS)

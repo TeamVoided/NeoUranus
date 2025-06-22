@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup
 import net.minecraft.tags.BlockTags
 import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.common.data.BlockTagsProvider
+import net.minecraftforge.common.data.ExistingFileHelper
 import net.minecraftforge.data.event.GatherDataEvent
 import org.teamvoided.neodonium.Neodonium
 import org.teamvoided.neodonium.data.NeodoniumTags
@@ -13,8 +14,8 @@ import org.teamvoided.neodonium.init.NeoBlocks
 import vectorwing.farmersdelight.common.registry.ModBlocks as FDBlocks
 
 
-class BlockTags(event: GatherDataEvent) :
-    BlockTagsProvider(event.generator.packOutput, event.lookupProvider, Neodonium.ID, event.existingFileHelper) {
+class BlockTags(event: GatherDataEvent, fh: ExistingFileHelper) :
+    BlockTagsProvider(event.generator.packOutput, event.lookupProvider, Neodonium.ID, fh) {
 
     override fun addTags(provider: HolderLookup.Provider) {
         this.registerModTags()

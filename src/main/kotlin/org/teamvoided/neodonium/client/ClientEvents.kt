@@ -1,12 +1,38 @@
 package org.teamvoided.neodonium.client
 
 
+import com.github.alexmodguy.alexscaves.AlexsCaves
+import com.github.alexmodguy.alexscaves.server.item.CaveInfoItem
+import net.minecraft.client.Minecraft
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
+import net.minecraftforge.client.event.EntityRenderersEvent
+import net.minecraftforge.client.event.RegisterColorHandlersEvent
+import net.minecraftforge.eventbus.api.IEventBus
+import org.teamvoided.neodonium.client.render.entity.ThrownRebarRenderer
+import org.teamvoided.neodonium.init.NeoEntities
+import org.teamvoided.neodonium.init.NeoItems
 
 
 @OnlyIn(Dist.CLIENT)
 object ClientEvents {
+
+    fun init(bus: IEventBus) {
+        bus.addListener(::onRegisterRenderers)
+        bus.addListener(::onItemColors)
+    }
+
+    fun onRegisterRenderers(event: EntityRenderersEvent.RegisterRenderers) {
+        event.registerEntityRenderer(NeoEntities.THROWN_REBAR.get(), ::ThrownRebarRenderer)
+        event.registerEntityRenderer(NeoEntities.THROWN_AZURE_REBAR.get(), ::ThrownRebarRenderer)
+    }
+
+    fun onItemColors(event: RegisterColorHandlersEvent.Item) {
+        AlexsCaves.LOGGER.info("loaded in item colorizer")
+        event.register({ stack, colorIn ->
+            if (colorIn != 1) -1 else CaveInfoItem.getBiomeColorOf(Minecraft.getInstance().level, stack, false)
+        }, NeoItems.EDIBLE_CAVE_TABLET.get())
+    }
 
     /*fun onPoseHand(event: EventPosePlayerHand) {
         val player = event.entityIn as LivingEntity

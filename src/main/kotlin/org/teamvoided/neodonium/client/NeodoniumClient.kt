@@ -6,12 +6,8 @@ import dev.kosmx.playerAnim.minecraftApi.PlayerAnimationFactory
 import net.minecraft.client.renderer.item.ItemProperties
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.api.distmarker.OnlyIn
-import net.minecraftforge.client.event.EntityRenderersEvent
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import org.teamvoided.neodonium.Neodonium.id
-import org.teamvoided.neodonium.Neodonium.log
-import org.teamvoided.neodonium.client.render.entity.ThrownRebarRenderer
-import org.teamvoided.neodonium.init.NeoEntities
 import org.teamvoided.neodonium.init.NeoItems
 import org.teamvoided.neodonium.util.isScarlet
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
@@ -23,17 +19,9 @@ object NeodoniumClient {
 
     init {
 //        log.info("Neodonium")
-        ClientEvents
-
-        PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(ANIM_FACTORY, 42) { ModifierLayer<IAnimation>() }
-
-        MOD_BUS.addListener(::regEntityRenderers)
         MOD_BUS.addListener(::clientInit)
-    }
-
-    fun regEntityRenderers(event: EntityRenderersEvent.RegisterRenderers) {
-        event.registerEntityRenderer(NeoEntities.THROWN_REBAR.get(), ::ThrownRebarRenderer)
-        event.registerEntityRenderer(NeoEntities.THROWN_AZURE_REBAR.get(), ::ThrownRebarRenderer)
+        ClientEvents.init(MOD_BUS)
+        PlayerAnimationFactory.ANIMATION_DATA_FACTORY.registerFactory(ANIM_FACTORY, 42) { ModifierLayer<IAnimation>() }
     }
 
     fun clientInit(event: FMLClientSetupEvent) {
