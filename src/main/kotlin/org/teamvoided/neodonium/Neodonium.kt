@@ -17,9 +17,10 @@ object Neodonium {
 
     // the logger for our mod
     val log: Logger = LogManager.getLogger(ID)
-    fun id(path: String) = ResourceLocation.fromNamespaceAndPath(ID, path)
-    fun mc(id: String) = ResourceLocation.withDefaultNamespace(id)
-    fun alexId(path: String) = ResourceLocation.fromNamespaceAndPath(AlexsCaves.MODID, path)
+    fun id(n: String, p: String): ResourceLocation = ResourceLocation.fromNamespaceAndPath(n, p)
+    fun mc(id: String): ResourceLocation = ResourceLocation.withDefaultNamespace(id)
+    fun id(path: String) = id(ID, path)
+    fun alexId(path: String) = id(AlexsCaves.MODID, path)
     fun isModLoaded(modId: String): Boolean = ModList.get().isLoaded(modId)
 
     init {
